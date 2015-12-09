@@ -1,3 +1,7 @@
 .split-pane *.split-pane-divider {
     -fx-padding: 0 0 0 0;
 } 
+
+ImageView #searchIcon {
+    content: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
+}

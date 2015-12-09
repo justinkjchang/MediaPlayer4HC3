@@ -22,6 +22,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -114,6 +115,8 @@ public class FXMLDocumentController implements Initializable {
     private SplitPane spDuration;
     @FXML 
     private SplitPane spAlbum;
+    @FXML
+    private ImageView imgClear;
     
     
     private void handleButtonAction(ActionEvent event) {
@@ -124,9 +127,16 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+        setIcons();
+        populateListView();
         
-        populateListView();        
     }    
+    
+    public void setIcons() {
+        Image img = new Image("file:clear_search.png");
+        imgSearch.setImage(img);    
+    }
     
     public void populateListView() {
         
