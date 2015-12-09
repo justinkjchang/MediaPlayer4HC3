@@ -151,9 +151,7 @@ public class FXMLDocumentController implements Initializable {
     
     public void disableResize() {
         
-        SplitPane.setResizableWithParent(sp0.getParent(), Boolean.FALSE);
-                
-        ArrayList<SplitPane> panes = new ArrayList<SplitPane>();
+        ArrayList<SplitPane> panes = new ArrayList<>();
         panes.add(sp0);
         panes.add(sp1);
         panes.add(sp2);
@@ -170,6 +168,7 @@ public class FXMLDocumentController implements Initializable {
         panes.add(spDuration);
         panes.add(spAlbum);
 
+        
         for(SplitPane pane : panes) {
             SplitPane.setResizableWithParent(pane.getParent(), Boolean.FALSE);
         }
