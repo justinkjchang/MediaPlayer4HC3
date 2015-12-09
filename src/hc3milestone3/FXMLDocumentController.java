@@ -6,6 +6,7 @@
 package hc3milestone3;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -124,6 +125,7 @@ public class FXMLDocumentController implements Initializable {
         // TODO
         
         populateListView();
+        disableResize();
         
     }    
     
@@ -145,6 +147,33 @@ public class FXMLDocumentController implements Initializable {
         listViewArtist.setItems(songArtists);
         listViewAlbum.setItems(songAlbums);
         listViewDuration.setItems(songDurations);
+    }
+    
+    public void disableResize() {
+        
+        SplitPane.setResizableWithParent(sp0.getParent(), Boolean.FALSE);
+                
+        ArrayList<SplitPane> panes = new ArrayList<SplitPane>();
+        panes.add(sp0);
+        panes.add(sp1);
+        panes.add(sp2);
+        panes.add(sp3);
+        panes.add(sp4);
+        panes.add(sp5);
+        panes.add(sp6);
+        panes.add(sp7);
+        panes.add(sp8);
+        panes.add(sp9);
+        panes.add(sp10);
+        panes.add(spArtist);
+        panes.add(spTitle);
+        panes.add(spDuration);
+        panes.add(spAlbum);
+
+        for(SplitPane pane : panes) {
+            SplitPane.setResizableWithParent(pane.getParent(), Boolean.FALSE);
+        }
+                
     }
     
 }
