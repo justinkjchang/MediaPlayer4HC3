@@ -23,6 +23,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -124,9 +125,7 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        populateListView();
-        disableResize();
-        
+        populateListView();        
     }    
     
     public void populateListView() {
@@ -148,31 +147,36 @@ public class FXMLDocumentController implements Initializable {
         listViewAlbum.setItems(songAlbums);
         listViewDuration.setItems(songDurations);
     }
-    
-    public void disableResize() {
-        
-        ArrayList<SplitPane> panes = new ArrayList<>();
-        panes.add(sp0);
-        panes.add(sp1);
-        panes.add(sp2);
-        panes.add(sp3);
-        panes.add(sp4);
-        panes.add(sp5);
-        panes.add(sp6);
-        panes.add(sp7);
-        panes.add(sp8);
-        panes.add(sp9);
-        panes.add(sp10);
-        panes.add(spArtist);
-        panes.add(spTitle);
-        panes.add(spDuration);
-        panes.add(spAlbum);
-
-        
-        for(SplitPane pane : panes) {
-            SplitPane.setResizableWithParent(pane.getParent(), Boolean.FALSE);
-        }
-                
+   
+    @FXML
+    private void titleLVPressed(MouseEvent event) {
+        int selected = listViewTitle.getSelectionModel().getSelectedIndex(); 
+        listViewAlbum.getSelectionModel().select(selected);
+        listViewArtist.getSelectionModel().select(selected);
+        listViewDuration.getSelectionModel().select(selected);
     }
-    
+
+    @FXML
+    private void artistLVPressed(MouseEvent event) {
+        int selected = listViewArtist.getSelectionModel().getSelectedIndex(); 
+        listViewAlbum.getSelectionModel().select(selected);
+        listViewTitle.getSelectionModel().select(selected);
+        listViewDuration.getSelectionModel().select(selected);
+    }
+
+    @FXML
+    private void albumLVPressed(MouseEvent event) {
+        int selected = listViewAlbum.getSelectionModel().getSelectedIndex(); 
+        listViewTitle.getSelectionModel().select(selected);
+        listViewArtist.getSelectionModel().select(selected);
+        listViewDuration.getSelectionModel().select(selected);
+    }
+
+    @FXML
+    private void durationLVPressed(MouseEvent event) {
+        int selected = listViewDuration.getSelectionModel().getSelectedIndex(); 
+        listViewAlbum.getSelectionModel().select(selected);
+        listViewArtist.getSelectionModel().select(selected);
+        listViewTitle.getSelectionModel().select(selected);
+    }
 }

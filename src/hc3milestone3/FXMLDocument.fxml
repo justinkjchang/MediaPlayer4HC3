@@ -74,9 +74,9 @@
                                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                               </rowConstraints>
                                                                <children>
-                                                                  <ImageView fx:id="imgSearch" fitHeight="38.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                                                                  <ImageView id="searchIcon" fx:id="imgSearch" fitHeight="38.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
                                                                   <TextField fx:id="searchText" prefHeight="26.0" prefWidth="267.0" promptText="Search" GridPane.columnIndex="2" />
-                                                                  <Button fx:id="btnSearchClr" mnemonicParsing="false" prefHeight="118.0" prefWidth="84.0" GridPane.columnIndex="3" />
+                                                                  <Button id="clearSearchIcon" fx:id="btnSearchClr" mnemonicParsing="false" prefHeight="118.0" prefWidth="84.0" GridPane.columnIndex="3" />
                                                                </children>
                                                             </GridPane>
                                                          </children>
@@ -107,7 +107,7 @@
                                                                         </AnchorPane>
                                                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                            <children>
-                                                                              <ListView fx:id="listViewTitle" layoutX="-9.0" layoutY="-100.0" minWidth="50.0" prefHeight="238.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                              <ListView fx:id="listViewTitle" layoutX="-9.0" layoutY="-100.0" minWidth="50.0" onMousePressed="#titleLVPressed" prefHeight="238.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                            </children>
                                                                         </AnchorPane>
                                                                     </items>
@@ -129,7 +129,7 @@
                                                                                     </AnchorPane>
                                                                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                                        <children>
-                                                                                          <ListView fx:id="listViewArtist" layoutX="-13.0" layoutY="-84.0" minWidth="50.0" prefHeight="237.0" prefWidth="208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                          <ListView fx:id="listViewArtist" layoutX="-13.0" layoutY="-84.0" minWidth="50.0" onMousePressed="#artistLVPressed" prefHeight="237.0" prefWidth="208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                        </children>
                                                                                     </AnchorPane>
                                                                                 </items>
@@ -151,7 +151,7 @@
                                                                                                 </AnchorPane>
                                                                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                                                    <children>
-                                                                                                      <ListView fx:id="listViewAlbum" layoutX="-24.0" layoutY="-81.0" minWidth="50.0" prefHeight="236.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                      <ListView fx:id="listViewAlbum" layoutX="-24.0" layoutY="-81.0" minWidth="50.0" onMousePressed="#albumLVPressed" prefHeight="236.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                    </children>
                                                                                                 </AnchorPane>
                                                                                             </items>
@@ -169,7 +169,7 @@
                                                                                                 </AnchorPane>
                                                                                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                                                                    <children>
-                                                                                                      <ListView fx:id="listViewDuration" layoutX="-1.0" layoutY="-61.0" minWidth="50.0" prefHeight="236.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                      <ListView fx:id="listViewDuration" layoutX="-1.0" layoutY="-61.0" minWidth="50.0" onMousePressed="#durationLVPressed" prefHeight="236.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                                                    </children>
                                                                                                 </AnchorPane>
                                                                                             </items>
