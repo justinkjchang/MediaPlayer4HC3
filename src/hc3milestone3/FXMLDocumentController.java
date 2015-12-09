@@ -104,6 +104,15 @@ public class FXMLDocumentController implements Initializable {
     private Label labelSong;
     @FXML
     private Label labelArtist;
+    @FXML 
+    private SplitPane spArtist;
+    @FXML 
+    private SplitPane spTitle;
+    @FXML 
+    private SplitPane spDuration;
+    @FXML 
+    private SplitPane spAlbum;
+    
     
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");

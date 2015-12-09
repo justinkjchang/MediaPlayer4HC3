@@ -87,75 +87,107 @@
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                              <children>
-                                                <SplitPane fx:id="sp6" dividerPositions="0.17248459958932238" layoutX="153.0" layoutY="37.0" orientation="VERTICAL" prefHeight="489.0" prefWidth="874.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <SplitPane fx:id="sp6" layoutX="153.0" layoutY="37.0" orientation="VERTICAL" prefHeight="489.0" prefWidth="874.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                   <items>
-                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                                         <children>
-                                                            <GridPane layoutX="110.0" layoutY="2.0" prefHeight="80.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                              <columnConstraints>
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                              </columnConstraints>
-                                                              <rowConstraints>
-                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                              </rowConstraints>
-                                                               <children>
-                                                                  <Button fx:id="sortBtnTitle" mnemonicParsing="false" prefHeight="138.0" prefWidth="326.0" text="Title" />
-                                                                  <Button fx:id="sortBtnArtist" mnemonicParsing="false" prefHeight="157.0" prefWidth="387.0" text="Artist" GridPane.columnIndex="1" />
-                                                                  <Button fx:id="sortBtnAlbum" mnemonicParsing="false" prefHeight="190.0" prefWidth="438.0" text="Album" GridPane.columnIndex="2" />
-                                                                  <Button fx:id="sortBtnDuration" mnemonicParsing="false" prefHeight="167.0" prefWidth="381.0" text="Duration" GridPane.columnIndex="3" />
-                                                               </children>
-                                                            </GridPane>
-                                                         </children>
-                                                      </AnchorPane>
-                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                                         <children>
-                                                            <SplitPane dividerPositions="0.24942528735632183" layoutX="135.0" layoutY="113.0" prefHeight="399.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                              <items>
-                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                     <children>
-                                                                        <ListView fx:id="listViewTitle" layoutX="7.0" layoutY="-1.0" prefHeight="397.0" prefWidth="213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                     <children>
-                                                                        <SplitPane dividerPositions="0.32921174652241114" layoutX="122.0" layoutY="81.0" prefHeight="397.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                                          <items>
-                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                                 <children>
-                                                                                    <ListView fx:id="listViewArtist" layoutX="48.0" layoutY="79.0" prefHeight="395.0" prefWidth="209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                                 </children>
-                                                                              </AnchorPane>
-                                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                                 <children>
-                                                                                    <SplitPane dividerPositions="0.4976635514018692" layoutX="101.0" layoutY="56.0" prefHeight="395.0" prefWidth="430.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                                                      <items>
-                                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                                             <children>
-                                                                                                <ListView fx:id="listViewAlbum" layoutX="5.0" layoutY="55.0" prefHeight="393.0" prefWidth="209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                                             </children>
-                                                                                          </AnchorPane>
-                                                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                                                                             <children>
-                                                                                                <ListView fx:id="listViewDuration" layoutX="-31.0" layoutY="138.0" prefHeight="393.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                                                             </children>
-                                                                                          </AnchorPane>
-                                                                                      </items>
-                                                                                    </SplitPane>
-                                                                                 </children>
-                                                                              </AnchorPane>
-                                                                          </items>
-                                                                        </SplitPane>
-                                                                     </children>
-                                                                  </AnchorPane>
-                                                              </items>
-                                                            </SplitPane>
-                                                         </children>
-                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
                                                   </items>
                                                 </SplitPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="489.0" prefWidth="874.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.24942528735632183" layoutX="135.0" layoutY="113.0" prefHeight="399.0" prefWidth="872.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <items>
+                                                          <AnchorPane minHeight="0.0" minWidth="50.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <SplitPane fx:id="spTitle" dividerPositions="0.15" layoutX="-30.0" layoutY="-32.0" orientation="VERTICAL" prefHeight="487.0" prefWidth="213.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <items>
+                                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                           <children>
+                                                                              <Button fx:id="sortBtnTitle" layoutX="-19.0" layoutY="7.0" mnemonicParsing="false" prefHeight="239.0" prefWidth="211.0" text="Title" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                           <children>
+                                                                              <ListView fx:id="listViewTitle" layoutX="-9.0" layoutY="-100.0" minWidth="50.0" prefHeight="238.0" prefWidth="211.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                    </items>
+                                                                  </SplitPane>
+                                                               </children>
+                                                            </AnchorPane>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <SplitPane dividerPositions="0.32921174652241114" layoutX="122.0" layoutY="81.0" prefHeight="397.0" prefWidth="649.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                    <items>
+                                                                      <AnchorPane minHeight="0.0" minWidth="50.0" prefHeight="160.0" prefWidth="100.0">
+                                                                           <children>
+                                                                              <SplitPane fx:id="spArtist" dividerPositions="0.15" layoutX="-20.0" layoutY="-45.0" orientation="VERTICAL" prefHeight="485.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                <items>
+                                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                       <children>
+                                                                                          <Button fx:id="sortBtnArtist" layoutX="-45.0" layoutY="18.0" mnemonicParsing="false" prefHeight="238.0" prefWidth="208.0" text="Artist" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                       </children>
+                                                                                    </AnchorPane>
+                                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                       <children>
+                                                                                          <ListView fx:id="listViewArtist" layoutX="-13.0" layoutY="-84.0" minWidth="50.0" prefHeight="237.0" prefWidth="208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                       </children>
+                                                                                    </AnchorPane>
+                                                                                </items>
+                                                                              </SplitPane>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                                           <children>
+                                                                              <SplitPane dividerPositions="0.4976635514018692" layoutX="101.0" layoutY="56.0" prefHeight="395.0" prefWidth="430.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                <items>
+                                                                                  <AnchorPane minHeight="0.0" minWidth="50.0" prefHeight="160.0" prefWidth="100.0">
+                                                                                       <children>
+                                                                                          <SplitPane fx:id="spAlbum" dividerPositions="0.15" layoutX="42.0" layoutY="9.0" orientation="VERTICAL" prefHeight="483.0" prefWidth="209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                            <items>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <Button fx:id="sortBtnAlbum" layoutX="-12.0" layoutY="18.0" mnemonicParsing="false" prefHeight="237.0" prefWidth="207.0" text="Album" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                   </children>
+                                                                                                </AnchorPane>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <ListView fx:id="listViewAlbum" layoutX="-24.0" layoutY="-81.0" minWidth="50.0" prefHeight="236.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                   </children>
+                                                                                                </AnchorPane>
+                                                                                            </items>
+                                                                                          </SplitPane>
+                                                                                       </children>
+                                                                                    </AnchorPane>
+                                                                                  <AnchorPane minHeight="0.0" minWidth="50.0" prefHeight="160.0" prefWidth="100.0">
+                                                                                       <children>
+                                                                                          <SplitPane fx:id="spDuration" dividerPositions="0.15" layoutX="-22.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="483.0" prefWidth="212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                            <items>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <Button fx:id="sortBtnDuration" layoutX="-38.0" layoutY="41.0" mnemonicParsing="false" prefHeight="237.0" prefWidth="210.0" text="Duration" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                   </children>
+                                                                                                </AnchorPane>
+                                                                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                                   <children>
+                                                                                                      <ListView fx:id="listViewDuration" layoutX="-1.0" layoutY="-61.0" minWidth="50.0" prefHeight="236.0" prefWidth="210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                   </children>
+                                                                                                </AnchorPane>
+                                                                                            </items>
+                                                                                          </SplitPane>
+                                                                                       </children>
+                                                                                    </AnchorPane>
+                                                                                </items>
+                                                                              </SplitPane>
+                                                                           </children>
+                                                                        </AnchorPane>
+                                                                    </items>
+                                                                  </SplitPane>
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
                                              </children>
                                           </AnchorPane>
                                       </items>
