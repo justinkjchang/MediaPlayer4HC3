@@ -21,10 +21,13 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 
 /**
  *
@@ -40,7 +43,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Accordion leftMediaMenu;
     @FXML
-    private TreeView<?> leftPlaylistTree;
+    private TreeView<String> leftPlaylistTree;
     @FXML
     private SplitPane sp3;
     @FXML
@@ -130,8 +133,37 @@ public class FXMLDocumentController implements Initializable {
 
         setIcons();
         populateListView();
+        populateAccordionView();
+        populateTreeView();
         
     }    
+    
+    public void populateTreeView() {
+        TreeItem<String> rootItem = new TreeItem<> ("Playlists");
+        rootItem.setExpanded(true);
+        for (int i = 1; i < 10; i++) {
+            TreeItem<String> item = new TreeItem<> ("Playlist " + i);            
+            rootItem.getChildren().add(item);
+        }        
+        leftPlaylistTree.setRoot(rootItem);
+    }
+    
+    public void populateAccordionView() {
+        GridPane gpMusic = new GridPane(); 
+        GridPane gpMovies = new GridPane(); 
+        GridPane gpTV = new GridPane(); 
+        gpMusic.setVgap(5);
+        gpMovies.setVgap(5);
+        gpTV.setVgap(5);
+        for (int i = 0; i < 5; ++i) {
+            gpMovies.add(new Button("Movie Item " + i), 0, i);
+            gpTV.add(new Button("TV Item " + i), 0, i);
+            gpMusic.add(new Button("Music Item " + i), 0, i);
+        }
+        leftMediaMenu.getPanes().get(0).setContent(gpMusic);
+        leftMediaMenu.getPanes().get(1).setContent(gpTV);
+        leftMediaMenu.getPanes().get(2).setContent(gpMovies);
+    }
     
     public void setIcons() {
         Image img = new Image("file:clear_search.png");
