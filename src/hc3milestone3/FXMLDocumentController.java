@@ -119,6 +119,8 @@ public class FXMLDocumentController implements Initializable {
     private SplitPane spAlbum;
     @FXML
     private ImageView imgClear;
+    @FXML
+    private ImageView musicIcon;
     
     
     private void handleButtonAction(ActionEvent event) {

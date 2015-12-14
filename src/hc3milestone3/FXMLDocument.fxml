@@ -26,16 +26,37 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                              </content>
+                                             <graphic>
+                                                <ImageView fx:id="musicIcon" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 100;">
+                                                   <image>
+                                                      <Image url="@music.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
                                           </TitledPane>
                                           <TitledPane animated="false" text="TV">
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                              </content>
+                                             <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 100;">
+                                                   <image>
+                                                      <Image url="@tv.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
                                           </TitledPane>
                                           <TitledPane animated="false" text="Movies">
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                              </content>
+                                             <graphic>
+                                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 100;">
+                                                   <image>
+                                                      <Image url="@play.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
                                           </TitledPane>
                                        </panes>
                                     </Accordion>
