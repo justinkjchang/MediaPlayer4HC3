@@ -8,6 +8,8 @@ package hc3milestone3;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -131,7 +133,8 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-        setIcons();
+        initializeVolumeSlider();
+        initializeSongProgress();
         populateListView();
         populateAccordionView();
         populateTreeView();
@@ -165,11 +168,6 @@ public class FXMLDocumentController implements Initializable {
         leftMediaMenu.getPanes().get(2).setContent(gpMovies);
     }
     
-    public void setIcons() {
-        Image img = new Image("file:clear_search.png");
-        imgSearch.setImage(img);    
-    }
-    
     public void populateListView() {
         
         ObservableList<String> songTitles = FXCollections.observableArrayList (
@@ -188,6 +186,32 @@ public class FXMLDocumentController implements Initializable {
         listViewArtist.setItems(songArtists);
         listViewAlbum.setItems(songAlbums);
         listViewDuration.setItems(songDurations);
+    }
+    
+    public void initializeVolumeSlider() {
+        sliderVolume.setMin(0);
+        sliderVolume.setMax(100);
+        sliderVolume.setShowTickMarks(true);
+        
+        sliderVolume.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println("volume changed");
+                Image volumeImage;
+                if(newValue.intValue() < 50) {
+                    volumeImage = new Image(getClass().getResourceAsStream("low-volume.png"));
+                    imgVolumeIcon.setImage(volumeImage);                    
+                } else if (newValue.intValue() >= 50) {
+                    volumeImage = new Image(getClass().getResourceAsStream("high-volume.png"));
+                    imgVolumeIcon.setImage(volumeImage);
+                }
+            }
+            
+        });
+    }
+    
+    public void initializeSongProgress() {
+        progDurationBar.setProgress(0.5);
     }
    
     @FXML
