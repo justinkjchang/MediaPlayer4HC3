@@ -6,7 +6,6 @@
 package hc3milestone3;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,12 +22,10 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -131,10 +128,10 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
 
         initializeVolumeSlider();
         initializeSongProgress();
+        initializeListViewChangeListeners();
         populateListView();
         populateAccordionView();
         populateTreeView();
@@ -172,15 +169,15 @@ public class FXMLDocumentController implements Initializable {
         
         ObservableList<String> songTitles = FXCollections.observableArrayList (
             "Never Gonna Give You Up", "Jump", "Bat Country", "Age of Reason", "One",
-                "End of the Beginning", "Good is Dead");
+                "Beautiful Now", "Let It Go");
         ObservableList<String> songArtists = FXCollections.observableArrayList (
             "Rick Astley", "Van Halen", "Avenged Sevenfold", "Black Sabbath", "Metallica",
-                "Black Sabbath", "Black Sabbath");
+                "Zedd ft. Jon Bellion", "Laidback Luke ft. Trevor Guthrie");
         ObservableList<String> songAlbums = FXCollections.observableArrayList (
-            "Whenever You Need Somebody", "1984", "Avanged Sevenfold", "13", 
-                "...And Justice for All", "13", "13");
+            "Whenever You Need Somebody", "1984", "Avenged Sevenfold", "13", 
+                "...And Justice for All", "True Colors", "Focus");
         ObservableList<String> songDurations = FXCollections.observableArrayList (
-            "3:32", "4:04", "5:12", "7:01", "7:24", "8:05", "8:52");
+            "3:32", "4:04", "5:12", "7:01", "7:24", "3:38", "3:20");
         
         listViewTitle.setItems(songTitles);
         listViewArtist.setItems(songArtists);
@@ -196,7 +193,6 @@ public class FXMLDocumentController implements Initializable {
         sliderVolume.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("volume changed");
                 Image volumeImage;
                 if(newValue.intValue() < 50) {
                     volumeImage = new Image(getClass().getResourceAsStream("low-volume.png"));
@@ -213,36 +209,47 @@ public class FXMLDocumentController implements Initializable {
     public void initializeSongProgress() {
         progDurationBar.setProgress(0.5);
     }
-   
-    @FXML
-    private void titleLVPressed(MouseEvent event) {
-        int selected = listViewTitle.getSelectionModel().getSelectedIndex(); 
-        listViewAlbum.getSelectionModel().select(selected);
-        listViewArtist.getSelectionModel().select(selected);
-        listViewDuration.getSelectionModel().select(selected);
-    }
-
-    @FXML
-    private void artistLVPressed(MouseEvent event) {
-        int selected = listViewArtist.getSelectionModel().getSelectedIndex(); 
-        listViewAlbum.getSelectionModel().select(selected);
-        listViewTitle.getSelectionModel().select(selected);
-        listViewDuration.getSelectionModel().select(selected);
-    }
-
-    @FXML
-    private void albumLVPressed(MouseEvent event) {
-        int selected = listViewAlbum.getSelectionModel().getSelectedIndex(); 
-        listViewTitle.getSelectionModel().select(selected);
-        listViewArtist.getSelectionModel().select(selected);
-        listViewDuration.getSelectionModel().select(selected);
-    }
-
-    @FXML
-    private void durationLVPressed(MouseEvent event) {
-        int selected = listViewDuration.getSelectionModel().getSelectedIndex(); 
-        listViewAlbum.getSelectionModel().select(selected);
-        listViewArtist.getSelectionModel().select(selected);
-        listViewTitle.getSelectionModel().select(selected);
+    
+    public void initializeListViewChangeListeners() {
+        listViewTitle.getSelectionModel().selectedItemProperty().addListener(
+            new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                int selected = listViewTitle.getSelectionModel().getSelectedIndex(); 
+                listViewAlbum.getSelectionModel().select(selected);
+                listViewArtist.getSelectionModel().select(selected);
+                listViewDuration.getSelectionModel().select(selected);
+            }   
+        });
+        listViewArtist.getSelectionModel().selectedItemProperty().addListener(
+            new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                int selected = listViewArtist.getSelectionModel().getSelectedIndex(); 
+                listViewAlbum.getSelectionModel().select(selected);
+                listViewTitle.getSelectionModel().select(selected);
+                listViewDuration.getSelectionModel().select(selected);
+            }  
+        });
+        listViewAlbum.getSelectionModel().selectedItemProperty().addListener(
+            new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                int selected = listViewAlbum.getSelectionModel().getSelectedIndex(); 
+                listViewTitle.getSelectionModel().select(selected);
+                listViewArtist.getSelectionModel().select(selected);
+                listViewDuration.getSelectionModel().select(selected);
+            }  
+        });
+        listViewDuration.getSelectionModel().selectedItemProperty().addListener(
+            new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                int selected = listViewDuration.getSelectionModel().getSelectedIndex(); 
+                listViewAlbum.getSelectionModel().select(selected);
+                listViewArtist.getSelectionModel().select(selected);
+                listViewTitle.getSelectionModel().select(selected);
+            }  
+        });
     }
 }
